@@ -1,0 +1,24 @@
+# BNU LaTeX Templates
+
+> Unofficial collection of Beijing Normal University LaTeX templates: a course paper, a CV, slides, and a convenience copy of the graduate thesis template dated 2026-03-01. Not affiliated with, endorsed by, or authorized by Beijing Normal University.
+
+The Chinese documentation is README.md. Editing rules are in AGENTS.md. This file is also published at the site root.
+
+## Templates
+
+- [Course paper](https://github.com/YZDame/BNU-LaTeX-Templates/tree/main/templates/paper): ctexart + BNUpapers.sty. Build with XeLaTeX, then BibTeX, then XeLaTeX twice. Bibliography: reference.bib.
+- [CV](https://github.com/YZDame/BNU-LaTeX-Templates/tree/main/templates/cv): XeLaTeX. Latin font TeX Gyre Heros, CJK font FandolHei. Based on myCV (https://github.com/Htallone/myCV). Do not reintroduce Helvetica Neue LT Pro, ProGB18030, or any font files.
+- [Slides](https://github.com/YZDame/BNU-LaTeX-Templates/tree/main/templates/slides): document class bnuslides, from the 2026 fork because it adds refs.bib. CJK fonts try macOS, then Windows (SimHei, SimSun, KaiTi), then Linux, then TeX Live Fandol. Do not require Microsoft YaHei. Sidebar credit: Zhibo Wang (https://github.com/zbowang/BeamerTheme). Logo file name is BNU_icon.pdf.
+- [Graduate thesis](https://github.com/YZDame/BNU-LaTeX-Templates/tree/main/templates/thesis): bnuthesis v0.0.5 (2026-03-01), LPPL-1.3c, based on ThuThesis. Official source, which takes precedence: https://etdlib.bnu.edu.cn/notice/81 . bnuthesis.cls is committed; regenerate it with `xetex bnuthesis.ins` after editing the dtx. Do not modify figures/ school marks. Build `bnuthesis-example.tex` and `spine.tex` with the included latexmkrc.
+
+## Logo
+
+- [assets/bnu-logo](https://github.com/YZDame/BNU-LaTeX-Templates/tree/main/assets/bnu-logo): GPL-3.0. Keep LICENSE in that directory. Do not relicense it as LPPL.
+
+## Do not vendor
+
+myCV, BeamerTheme, LDMCM, Tsinghua thesis trees, or Elegant templates. Credit them; do not copy those repositories in.
+
+## Build
+
+From the repository root, `make all` runs XeLaTeX via latexmk for every template. GitHub Actions compiles the same four documents on push and pull request and uploads the PDFs.

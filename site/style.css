@@ -1,0 +1,111 @@
+:root {
+  --blue: #005093;
+  --blue-dark: #003868;
+  --ink: #1c2430;
+  --muted: #5c6775;
+  --line: #d5deea;
+  --paper: #f4f7fb;
+  --card: #ffffff;
+}
+
+* { box-sizing: border-box; }
+
+body {
+  margin: 0;
+  color: var(--ink);
+  background: var(--paper);
+  font-family: "Source Han Sans SC", "Noto Sans CJK SC", "PingFang SC", "WenQuanYi Micro Hei", "Segoe UI", sans-serif;
+  line-height: 1.65;
+}
+
+a { color: var(--blue); }
+
+.wrap { width: min(1080px, calc(100% - 32px)); margin: 0 auto; }
+
+header {
+  background: var(--blue);
+  color: white;
+  padding: 36px 0 28px;
+}
+
+header h1 { margin: 0 0 8px; font-size: 1.9rem; letter-spacing: 0.01em; }
+header p { margin: 0; max-width: 46rem; }
+header a { color: white; }
+
+.banner {
+  margin-top: 16px;
+  padding: 12px 14px;
+  background: rgba(255, 255, 255, 0.12);
+  border-radius: 8px;
+  font-size: 0.95rem;
+}
+
+main { padding: 28px 0 64px; }
+
+section { margin: 0 0 28px; }
+
+h2 { margin: 0 0 12px; font-size: 1.35rem; color: var(--blue-dark); }
+
+.grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 16px;
+}
+
+article {
+  background: var(--card);
+  border: 1px solid var(--line);
+  border-radius: 12px;
+  overflow: hidden;
+}
+
+article img {
+  display: block;
+  width: 100%;
+  height: auto;
+  background: white;
+  border-bottom: 1px solid var(--line);
+}
+
+article .body { padding: 14px 16px 16px; }
+article h3 { margin: 0 0 6px; font-size: 1.1rem; }
+article p { margin: 0 0 10px; color: var(--muted); }
+
+.links { display: flex; flex-wrap: wrap; gap: 8px; }
+.links a, button {
+  display: inline-block;
+  border: 1px solid var(--blue);
+  background: white;
+  color: var(--blue);
+  border-radius: 999px;
+  padding: 4px 12px;
+  font: inherit;
+  text-decoration: none;
+  cursor: pointer;
+}
+.links a.primary, button.primary { background: var(--blue); color: white; }
+
+pre {
+  margin: 0;
+  padding: 14px;
+  overflow: auto;
+  background: #0f2744;
+  color: #e8f0fa;
+  border-radius: 10px;
+  font-size: 0.86rem;
+  line-height: 1.55;
+}
+
+.prompt-bar { display: flex; justify-content: space-between; align-items: center; gap: 12px; margin: 8px 0; }
+.prompt-bar h3 { margin: 0; font-size: 1rem; }
+
+.note, .english {
+  background: white;
+  border: 1px solid var(--line);
+  border-radius: 12px;
+  padding: 14px 16px;
+}
+
+code { font-family: ui-monospace, "Sarasa Mono SC", "Source Han Mono", monospace; font-size: 0.92em; }
+
+footer { color: var(--muted); font-size: 0.9rem; padding-bottom: 28px; }

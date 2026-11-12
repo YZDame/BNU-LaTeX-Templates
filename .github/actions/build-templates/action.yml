@@ -1,0 +1,36 @@
+name: Build templates
+description: Compile the paper, CV, slides, thesis example, and spine with XeLaTeX on TeX Live.
+
+runs:
+  using: composite
+  steps:
+    - name: Compile course paper
+      uses: xu-cheng/latex-action@v3
+      with:
+        root_file: main.tex
+        working_directory: templates/paper
+        latexmk_use_xelatex: true
+
+    - name: Compile CV
+      uses: xu-cheng/latex-action@v3
+      with:
+        root_file: main.tex
+        working_directory: templates/cv
+        latexmk_use_xelatex: true
+
+    - name: Compile slides
+      uses: xu-cheng/latex-action@v3
+      with:
+        root_file: main.tex
+        working_directory: templates/slides
+        latexmk_use_xelatex: true
+
+    - name: Compile thesis example and spine
+      uses: xu-cheng/latex-action@v3
+      with:
+        root_file: |
+          bnuthesis-example.tex
+          spine.tex
+        working_directory: templates/thesis
+        latexmk_use_xelatex: true
+        latexmk_shell_escape: true

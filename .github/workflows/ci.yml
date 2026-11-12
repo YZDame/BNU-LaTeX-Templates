@@ -1,0 +1,36 @@
+name: CI
+
+on:
+  push:
+    branches:
+      - "**"
+  pull_request:
+
+permissions:
+  contents: read
+
+concurrency:
+  group: ci-${{ github.workflow }}-${{ github.ref }}
+  cancel-in-progress: true
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v5
+
+      - name: Compile templates
+        uses: ./.github/actions/build-templates
+
+      - name: Upload PDFs
+        uses: actions/upload-artifact@v4
+        with:
+          name: template-pdfs
+          if-no-files-found: error
+          path: |
+            templates/paper/main.pdf
+            templates/cv/main.pdf
+            templates/slides/main.pdf
+            templates/thesis/bnuthesis-example.pdf
+            templates/thesis/spine.pdf
