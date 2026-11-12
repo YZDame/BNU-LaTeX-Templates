@@ -1,6 +1,6 @@
 # 幻灯片
 
-师大蓝 Beamer，文档类 `bnuslides`。取自 [BNUslides2026](https://github.com/YZDame/BNUslides2026)（含 `refs.bib`）。作者 LeyuDame。侧栏目录参考 [zbowang/BeamerTheme](https://github.com/zbowang/BeamerTheme)。
+师大蓝 Beamer，文档类 `bnuslides`。取自 [BNUslides2026](https://github.com/YZDame/BNUslides2026)（含 `refs.bib`）。侧栏目录参考 [zbowang/BeamerTheme](https://github.com/zbowang/BeamerTheme)。
 
 <img src="../../assets/previews/slides-title.png" alt="标题页" width="480">
 <img src="../../assets/previews/slides-content.png" alt="内容页" width="480">

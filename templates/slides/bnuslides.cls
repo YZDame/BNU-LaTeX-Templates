@@ -1,4 +1,3 @@
-% Author: LeyuDame
 % Date: 2024-04-20; bibliography support from BNUslides2026 (2026-02-01)
 % Github: https://github.com/leyudame/BNUslides
 %         https://github.com/YZDame/BNUslides2026
@@ -198,7 +197,7 @@
 
 \title[BNUslides]{BNUslides: 一份简单的师大蓝主题Beamer}
 \subtitle{}
-\author[LeyuDame]{LeyuDame}
+\author[张三]{张三}
 \institute[北京师范大学]{北京师范大学}
 \date[\today]{\today}
 \titlegraphic{\includegraphics[width=2cm]{BNU_icon.pdf}}

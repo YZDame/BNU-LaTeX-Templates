@@ -1,6 +1,6 @@
 # 简历
 
-XeLaTeX 简历。LeyuDame 改进，基于 [myCV](https://github.com/Htallone/myCV)。
+XeLaTeX 简历。基于 [myCV](https://github.com/Htallone/myCV) 修改。
 
 <img src="../../assets/previews/cv.png" alt="简历" width="480">
 

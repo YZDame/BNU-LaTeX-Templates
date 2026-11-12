@@ -1,5 +1,5 @@
 %% !TEX program = xelatex*2
-%% 最新的版本请参见Github @LeyuDame
+%% 上游仓库：
 %% https://github.com/LeyuDame
 %% 本模板在overleaf上的链接（可能版本会旧一些） 
 %% https://www.overleaf.com/latex/templates/bnucv/stjnkyqdcqzm
@@ -91,7 +91,7 @@
 \pagenumbering{gobble} % suppress displaying page number
 %%%% 利用tikz来定位照片，部分招聘单位可能需要“以貌取人”
 \begin{tikzpicture}[remember picture, overlay]
-	\node[anchor = north east] at ($(current page.north east)+(-1cm,-1.2cm)$) {\includegraphics[height=2.8cm]{img/avatar.jpg}};
+	\node[anchor = north east] at ($(current page.north east)+(-1cm,-1.2cm)$) {\includegraphics[height=2.8cm]{img/avatar.png}};
 \end{tikzpicture}%
 %%%% 利用tikz来定位学校Logo，这里只在第一页显示，如果需要每页都有，可以考虑在页眉、页脚或者background中加入，不过简历也就一两页，无所谓了
 \begin{tikzpicture}[remember picture, overlay]
