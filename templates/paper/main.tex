@@ -2,6 +2,15 @@
 \documentclass[12pt,hyperref,a4paper,UTF8]{ctexart}
 \usepackage{BNUpapers}
 
+\title{\Huge\textbf{示例：城市绿地与夏季气温}}
+\author{%
+\kaishu\Large
+    姓名\ \underline{张三} \qquad
+    学号\ \underline{2024XXXXXX} \qquad
+    院系\ \underline{某某学院}%
+}
+\date{\today}
+
 %%-------------------------------正文开始---------------------------%%
 \begin{document}
 
@@ -9,11 +18,9 @@
 \cover
 
 %%------------------摘要-------------%%
-%\begin{abstract}
-%
-%在此填写摘要内容
-%
-%\end{abstract}
+\begin{abstract}
+本文以某市若干公园与街道为示例，说明课程论文中摘要、正文、图表和参考文献的写法。示例比较了绿地覆盖较高的街区与绿地较少的街区在夏季午后的气温差异，并给出一个简单的数量关系。结论仅用于演示版式，不对应真实观测。
+\end{abstract}
 
 \thispagestyle{empty} % 首页不显示页码
 
@@ -29,76 +36,74 @@
 %    \title{ \Huge \textbf{{标题}}}
 %\end{center}
 
-\section{模板说明}
-本模板主要适用于一些课程的平时论文以及期末论文，默认页边距为2.5cm，中文宋体，英文Times New Roman，字号为12pt（小四）。
+\section{研究说明}
+本文是课程论文的示例正文。讨论对象是城市中的公共绿地与夏季午后气温，材料为虚构的街区记录，用来占位，方便替换成自己的题目。
 
-编译方式：\verb|xelatex -> bibtex -> xelatex*2|
+示例按“问题、材料、结果、讨论”组织。编译方式见仓库说明：\verb|xelatex -> bibtex -> xelatex*2|。
 
-默认模板文件由以下四部分组成：
+本示例用到的材料包括：
 \begin{itemize}
-    \item \texttt{main.tex} 主文件
-    \item \texttt{reference.bib} 参考文献，使用bibtex
-    \item \texttt{BNUpapers.sty} 文档格式控制，包括一些基础的设置，如页眉、标题、姓名等
-    \item \texttt{figures} 放置图片的文件夹
+    \item 四条样例街道的绿地比例
+    \item 对应的午后气温记录
+    \item 一幅校名图，仅作插图演示
+    \item 两则与科学史有关的参考文献
 \end{itemize}
 
-第一次使用时需前往\texttt{BNUpapers.sty} 对标题、姓名、学号、院系、页眉等进行设置，设置完后即可一劳永逸，封面logo亦可替换
+把标题、姓名、学号和院系改成自己的信息后即可继续写。封面、目录和参考文献页保留在示例中，页码从目录页开始。
 
-默认带有封面页以及目录页，页码从目录页开始
+\section{结果与讨论}
+\subsection{一个简单关系}
+样例里把温差写成行内式 $v-\varepsilon+\phi=2$。
 
-\section{一些插入功能}
-\subsection{插入公式}
-行内公式$v-\varepsilon+\phi=2$。
-
-插入行间公式如\autoref{Euler}：
+若把同一关系单独列出，如\autoref{Euler}：
 \begin{equation}
     v-\varepsilon+\phi=2
     \label{Euler}
 \end{equation}
 
-\subsection{插入图片}
-BNU校徽如\autoref{bnu}所示，注意这里使用了\verb|~\autoref{}|命令，也就是会自动生成“图”“式”等前缀，无需手动输入。
+\subsection{插图}
+校名图如\autoref{bnu}所示。\verb|~\autoref{}| 会生成“图”“式”等前缀。
 
 \begin{figure}[!htbp]
     \centering
     \includegraphics[width =.4\textwidth]{figures/BNU_name.pdf}
-    \caption{北京师范大学}
+    \caption{示例插图}
     \label{bnu}
 \end{figure}
 
-插入上面图片的代码：
+插图示例代码：
 
 \begin{verbatim}
     \begin{figure}[!htbp]
         \centering
         \includegraphics[width =.4\textwidth]{figures/BNU_name.pdf}
-        \caption{北京师范大学}
+        \caption{示例插图}
         \label{bnu}
     \end{figure}
 \end{verbatim}
 
-\subsection{插入文本框}
-本模板定义了一个圆角灰底的文本框，使用简化命令\verb|\tbox{}|即可，如果你不喜欢，可以前往 \texttt{BNUpapers.sty}对其进行修改。
+\subsection{补充说明}
+需要强调的句子可以放进圆角文本框，命令是\verb|\tbox{}|。
 
 \tbox{
-    这是一个圆角灰底的文本框
+    示例：绿地比例更高的街区，午后气温略低。
 }
 
-\subsection{插入表格}
-本模板文件如\autoref{doc}所示。
+\subsection{样例数据}
+四条街道的记录如\autoref{doc}所示。
 \begin{table}[!htbp]
     \centering
     \begin{tabular}{l  | l}
     \hline
-        文件名 & 说明 \\
+        街道 & 绿地比例 \\
         \hline
-        \texttt{main.tex}  & 主文件 \\
-        \texttt{reference.bib} & 参考文献 \\
-        \texttt{BNUpapers.sty}  & 文档格式控制\\
-        \texttt{figures}  & 图片文件夹 \\
+        甲 & 高 \\
+        乙 & 中 \\
+        丙 & 低 \\
+        丁 & 很低 \\
         \hline
     \end{tabular}
-    \caption{本模板文件组成}
+    \caption{示例表格}
     \label{doc}
 \end{table}
 
@@ -124,30 +129,29 @@ BNU校徽如\autoref{bnu}所示，注意这里使用了\verb|~\autoref{}|命令�
 %\begin{proof}
 %\end{proof}
 
-\subsection{插入参考文献}
-直接使用\verb|\cite{}|即可。
+\subsection{参考文献}
+正文中用\verb|\cite{}|引用。
 
 例如：
 
 
-   \textit{ 此处引用了文献\cite{0Isaac}。此处引用了文献\cite{2016The}}
+   \textit{ 这里引用了\cite{0Isaac}，也引用了\cite{2016The}。}
 
 
-引用过的文献会自动出现在参考文献中。
+引用过的条目会出现在文末。
 
-\section{写在最后}
-\subsection{发布地址}
+\section{小结}
+\subsection{可以替换的部分}
 \begin{itemize}
-    \item Github: \url{https://github.com/LeyuDame/BNUpapers}
-    \item Overleaf: \url{https://www.overleaf.com/latex/templates/bnuke-cheng-lun-wen-mo-ban/bcwvxncqffkw}
+    \item 标题、摘要和各节文字
+    \item 图、表和公式中的示例数据
+    \item \texttt{reference.bib} 中的文献条目
 \end{itemize}
-\subsection{待实现的功能}
-一般在数学中文论文中，常常用实心全角句点“.”代替句号“。”，为实现这一功能，理论上可以用\verb|xeCJK|里的\verb|fullwidth-stop|来进行字符映射，从而实现句号的转换，但在实际编译中常常因为各种原因报错，希望以后能实现这一功能。
+\subsection{写作时注意}
+示例只说明版式。正式作业应换成自己的问题、数据和文献，并核对学校对封面信息的要求。
 
 \tbox{
-2024/04/18补充:
-
-其实写完后直接全文替换一下会比较容易？
+把本页的示例句子换成自己的结论即可。
 }
 %%----------- 参考文献 -------------------%%
 %在reference.bib文件中填写参考文献，此处自动生成

@@ -72,6 +72,79 @@
 \setbeamersize{sidebar width right=3.2cm}
 \setbeamersize{sidebar width left=1cm}
 
+% 标题页不占右侧目录栏：在帧开始前把左右 sidebar 宽度都收回 0，
+% 正文宽度才是整页（只留 beamer 默认页边距），而不是把目录藏起来却留下空白。
+% 只作用于帧体仅为 \titlepage 的那一帧，例如 \frame[plain]{\titlepage} 或 \maketitle。
+\RequirePackage{etoolbox}
+\newif\ifbnuslides@titleslide
+\newlength{\bnuslides@savedright}
+\newlength{\bnuslides@savedleft}
+\newlength{\bnuslides@savedtextwidth}
+\newlength{\bnuslides@savedoddsidemargin}
+\newcommand{\bnuslides@titleframe@widen}{%
+  \setlength{\bnuslides@savedright}{\beamer@rightsidebar}%
+  \setlength{\bnuslides@savedleft}{\beamer@leftsidebar}%
+  \let\bnuslides@savedlmargin\Gm@lmargin
+  \let\bnuslides@savedrmargin\Gm@rmargin
+  \setlength{\bnuslides@savedtextwidth}{\textwidth}%
+  \setlength{\bnuslides@savedoddsidemargin}{\oddsidemargin}%
+  \setlength{\beamer@leftsidebar}{0pt}%
+  \setlength{\beamer@rightsidebar}{0pt}%
+  \edef\Gm@lmargin{\the\beamer@leftmargin}%
+  \edef\Gm@rmargin{\the\beamer@rightmargin}%
+  \setlength{\textwidth}{\paperwidth}%
+  \addtolength{\textwidth}{-\Gm@lmargin}%
+  \addtolength{\textwidth}{-\Gm@rmargin}%
+  \setlength{\oddsidemargin}{\Gm@lmargin}%
+  \addtolength{\oddsidemargin}{-1in}%
+  \setlength{\evensidemargin}{\oddsidemargin}%
+  \setlength{\hsize}{\textwidth}%
+  \setlength{\linewidth}{\textwidth}%
+  \setlength{\columnwidth}{\textwidth}%
+  \setbeamertemplate{sidebar right}{}%
+  \setbeamertemplate{sidebar left}{}%
+}
+\newcommand{\bnuslides@titleframe@restore}{%
+  \setlength{\beamer@rightsidebar}{\bnuslides@savedright}%
+  \setlength{\beamer@leftsidebar}{\bnuslides@savedleft}%
+  \let\Gm@lmargin\bnuslides@savedlmargin
+  \let\Gm@rmargin\bnuslides@savedrmargin
+  \setlength{\textwidth}{\bnuslides@savedtextwidth}%
+  \setlength{\oddsidemargin}{\bnuslides@savedoddsidemargin}%
+  \setlength{\evensidemargin}{\oddsidemargin}%
+  \setlength{\hsize}{\textwidth}%
+  \setlength{\linewidth}{\textwidth}%
+  \setlength{\columnwidth}{\textwidth}%
+  \setbeamertemplate{sidebar right}{\insertverticalnavigation{\beamer@sidebarwidth}}%
+}
+\ExplSyntaxOn
+\cs_new_protected:Npn \bnuslides@titleframe@begin #1
+  {
+    \tl_set:Nn \l_tmpa_tl {#1}
+    \tl_trim_spaces:N \l_tmpa_tl
+    \tl_remove_all:Nn \l_tmpa_tl { \par }
+    \tl_if_eq:NnTF \l_tmpa_tl { \titlepage }
+      {
+        \bnuslides@titleslidetrue
+        \bnuslides@titleframe@widen
+      }
+      { \bnuslides@titleslidefalse }
+  }
+\cs_new_protected:Npn \bnuslides@titleframe@end
+  {
+    \ifbnuslides@titleslide
+      \bnuslides@titleframe@restore
+      \bnuslides@titleslidefalse
+    \fi
+  }
+\ExplSyntaxOff
+\pretocmd{\beamer@doseveralframes}{%
+  \bnuslides@titleframe@begin{#1}%
+}{}{\ClassError{bnuslides}{Failed to patch the title-page frame}{}}
+\apptocmd{\beamer@doseveralframes}{%
+  \bnuslides@titleframe@end
+}{}{\ClassError{bnuslides}{Failed to restore the sidebar after the title page}{}}
+
 
 
 \definecolor{BUNBlue}{RGB}{0,80,147}
