@@ -1,14 +1,14 @@
-# 幻灯片模板
+# 幻灯片
 
-师大蓝 Beamer，文档类 `bnuslides`。本目录采用 [BNUslides2026](https://github.com/YZDame/BNUslides2026)（[leyudame/BNUslides](https://github.com/leyudame/BNUslides) 的分支）。2026 版在 2024 版之上增加了 `refs.bib`、参考文献帧和 `appendixnumberbeamer`，因此作为更完整的一份收录。
+师大蓝 Beamer，文档类 `bnuslides`。取自 [BNUslides2026](https://github.com/YZDame/BNUslides2026)（含 `refs.bib`）。作者 LeyuDame。侧栏目录参考 [zbowang/BeamerTheme](https://github.com/zbowang/BeamerTheme)。
 
-作者 LeyuDame。右侧分节目录的做法来自 [Zhibo Wang 的 BeamerTheme](https://github.com/zbowang/BeamerTheme)。封面校徽 `BNU_icon.pdf` 来自 `assets/bnu-logo`（GPL-3.0）。在大小写敏感的系统上，文件名必须是 `BNU_icon.pdf`。
+<img src="../../assets/previews/slides-title.png" alt="标题页" width="480">
+<img src="../../assets/previews/slides-content.png" alt="内容页" width="480">
 
-中文不再使用微软雅黑。`bnuslides.cls` 关闭 ctex 的默认字体集，按 macOS（苹方 / 黑体-简 / 宋体-简）、Windows（黑体 / 宋体 / 楷体）、Linux（Noto、思源黑体、文泉驿）的顺序探测，最后使用 TeX Live 自带的 Fandol。这样在只有 TeX Live 的 CI 里也能编译。
+中文按 macOS、Windows、Linux 的字体依次回退，最后使用 TeX Live 的 Fandol。封面校徽为 `BNU_icon.pdf`（GPL-3.0）。引用说明见 `REFERENCES.md`。
 
 ```bash
-cd templates/slides
 latexmk -xelatex main.tex
 ```
 
-等价顺序：`xelatex → bibtex → xelatex → xelatex`。引用写法见 `REFERENCES.md`。
+Overleaf：上传本目录，编译器选 XeLaTeX。

@@ -59,12 +59,20 @@ article {
   overflow: hidden;
 }
 
-article img {
+.shots {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  background: white;
+  border-bottom: 1px solid var(--line);
+}
+
+.shots.single { grid-template-columns: 1fr; }
+
+.shots img {
   display: block;
   width: 100%;
   height: auto;
   background: white;
-  border-bottom: 1px solid var(--line);
 }
 
 article .body { padding: 14px 16px 16px; }

@@ -23,10 +23,13 @@
       <h2>模板</h2>
       <div class="grid">
         <article>
-          <img src="previews/paper.png" alt="课程论文封面，含蓝色校名和标题">
+          <div class="shots">
+            <img src="previews/paper-cover.png" alt="课程论文封面">
+            <img src="previews/paper-body.png" alt="课程论文正文">
+          </div>
           <div class="body">
             <h3>课程论文</h3>
-            <p><code>templates/paper</code>。ctexart，参考文献用 BibTeX。编译：xelatex → bibtex → xelatex 两次，或在该目录执行 <code>latexmk -xelatex main.tex</code>。Overleaf 选择 XeLaTeX。先在 <code>BNUpapers.sty</code> 里改标题、姓名和页眉。</p>
+            <p><code>templates/paper</code>。ctexart，BibTeX。<code>latexmk -xelatex main.tex</code>。</p>
             <div class="links">
               <a class="primary" href="pdf/paper.pdf">下载 PDF</a>
               <a href="https://github.com/YZDame/BNU-LaTeX-Templates/tree/main/templates/paper">源文件</a>
@@ -34,10 +37,12 @@
           </div>
         </article>
         <article>
-          <img src="previews/cv.png" alt="简历第一页，含校名、中文小节和页脚">
+          <div class="shots single">
+            <img src="previews/cv.png" alt="简历">
+          </div>
           <div class="body">
             <h3>简历</h3>
-            <p><code>templates/cv</code>。XeLaTeX。英文 TeX Gyre Heros，中文 Fandol 黑体，都在 TeX Live 里。基于 myCV。不要加回 Helvetica Neue 或方正兰亭黑。</p>
+            <p><code>templates/cv</code>。XeLaTeX，基于 myCV。TeX Gyre Heros 与 FandolHei。</p>
             <div class="links">
               <a class="primary" href="pdf/cv.pdf">下载 PDF</a>
               <a href="https://github.com/YZDame/BNU-LaTeX-Templates/tree/main/templates/cv">源文件</a>
@@ -45,10 +50,13 @@
           </div>
         </article>
         <article>
-          <img src="previews/slides.png" alt="幻灯片标题页，含中文标题和校徽">
+          <div class="shots">
+            <img src="previews/slides-title.png" alt="幻灯片标题页">
+            <img src="previews/slides-content.png" alt="幻灯片内容页">
+          </div>
           <div class="body">
             <h3>幻灯片</h3>
-            <p><code>templates/slides</code>。文档类 <code>bnuslides</code>。中文按 macOS、Windows、Linux 回退，最后用 Fandol，不依赖微软雅黑。编译：xelatex → bibtex → xelatex 两次。侧栏目录致谢 zbowang。</p>
+            <p><code>templates/slides</code>。文档类 bnuslides。侧栏参考 zbowang/BeamerTheme。</p>
             <div class="links">
               <a class="primary" href="pdf/slides.pdf">下载 PDF</a>
               <a href="https://github.com/YZDame/BNU-LaTeX-Templates/tree/main/templates/slides">源文件</a>
@@ -56,10 +64,13 @@
           </div>
         </article>
         <article>
-          <img src="previews/thesis.png" alt="学位论文封面，含蓝色校名和作者信息">
+          <div class="shots">
+            <img src="previews/thesis-cover.png" alt="学位论文封面">
+            <img src="previews/thesis-body.png" alt="学位论文正文">
+          </div>
           <div class="body">
             <h3>研究生学位论文</h3>
-            <p><code>templates/thesis</code> 是 bnuthesis v0.0.5（2026-03-01）的副本，基于 ThuThesis。官方最新版优先：<a href="https://etdlib.bnu.edu.cn/notice/81">图书馆论文系统说明</a>。本仓库与学校无关。<code>figures/</code> 中的校名图按官方包原样保留。编译 <code>bnuthesis-example.tex</code> 和 <code>spine.tex</code>。</p>
+            <p><code>templates/thesis</code>。bnuthesis v0.0.5（2026-03-01）。官方最新版见 <a href="https://etdlib.bnu.edu.cn/notice/81">图书馆论文系统</a>。</p>
             <div class="links">
               <a class="primary" href="pdf/thesis.pdf">下载示例 PDF</a>
               <a href="pdf/thesis-spine.pdf">书脊 PDF</a>
