@@ -101,6 +101,8 @@
   \setlength{\hsize}{\textwidth}%
   \setlength{\linewidth}{\textwidth}%
   \setlength{\columnwidth}{\textwidth}%
+  \expandafter\let\expandafter\bnuslides@savedtmplright\csname beamer@@tmpl@sidebar right\endcsname
+  \expandafter\let\expandafter\bnuslides@savedtmplleft\csname beamer@@tmpl@sidebar left\endcsname
   \setbeamertemplate{sidebar right}{}%
   \setbeamertemplate{sidebar left}{}%
 }
@@ -115,7 +117,8 @@
   \setlength{\hsize}{\textwidth}%
   \setlength{\linewidth}{\textwidth}%
   \setlength{\columnwidth}{\textwidth}%
-  \setbeamertemplate{sidebar right}{\insertverticalnavigation{\beamer@sidebarwidth}}%
+  \expandafter\let\csname beamer@@tmpl@sidebar right\endcsname\bnuslides@savedtmplright
+  \expandafter\let\csname beamer@@tmpl@sidebar left\endcsname\bnuslides@savedtmplleft
 }
 \ExplSyntaxOn
 \cs_new_protected:Npn \bnuslides@titleframe@begin #1
