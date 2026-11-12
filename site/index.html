@@ -1,139 +1,100 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="zh-CN">
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>北京师范大学 LaTeX 模板合集（非官方）</title>
+  <meta name="color-scheme" content="light">
+  <meta name="description" content="北京师范大学 LaTeX 模板合集：简历、课程论文、研究生学位论文与幻灯片。非官方整理。">
+  <title>BNU LaTeX Templates · 非官方模板合集</title>
   <link rel="stylesheet" href="style.css">
 </head>
 <body>
-  <header>
-    <div class="wrap">
-      <h1>北京师范大学 LaTeX 模板合集</h1>
-      <p>课程论文、简历、幻灯片，以及 2026-03-01 版研究生学位论文模板。用 XeLaTeX 编译。</p>
-      <div class="banner">
-        <strong>非官方。</strong>本站与北京师范大学没有隶属关系，未获认可或授权。校名和校徽只用于演示版式，使用前请自行核对学校的标识规范。
-        学位论文以图书馆系统的最新版为准：
-        <a href="https://etdlib.bnu.edu.cn/notice/81">etdlib.bnu.edu.cn/notice/81</a>。
-      </div>
+  <header class="site-header">
+    <div class="wrap nav">
+      <a class="brand" href="./" aria-label="BNU LaTeX Templates 首页">BNU <span>LaTeX</span></a>
+      <a class="nav-link" href="https://github.com/YZDame/BNU-LaTeX-Templates">GitHub <span aria-hidden="true">↗</span></a>
     </div>
   </header>
+
   <main class="wrap">
-    <section>
-      <h2>模板</h2>
-      <div class="grid">
-        <article>
-          <img src="previews/paper.png" alt="课程论文封面，含蓝色校名和标题">
-          <div class="body">
-            <h3>课程论文</h3>
-            <p><code>templates/paper</code>。ctexart，参考文献用 BibTeX。编译：xelatex → bibtex → xelatex 两次，或在该目录执行 <code>latexmk -xelatex main.tex</code>。Overleaf 选择 XeLaTeX。先在 <code>BNUpapers.sty</code> 里改标题、姓名和页眉。</p>
-            <div class="links">
-              <a class="primary" href="pdf/paper.pdf">下载 PDF</a>
-              <a href="https://github.com/YZDame/BNU-LaTeX-Templates/tree/main/templates/paper">源文件</a>
-            </div>
-          </div>
-        </article>
-        <article>
-          <img src="previews/cv.png" alt="简历第一页，含校名、中文小节和页脚">
-          <div class="body">
+    <div class="intro">
+      <p class="eyebrow">非官方模板合集</p>
+      <h1>北京师范大学 LaTeX 模板</h1>
+      <p class="subtitle">简历、课程论文、学位论文与幻灯片。</p>
+    </div>
+
+    <section aria-labelledby="templates-title">
+      <h2 id="templates-title" class="section-title">模板预览</h2>
+      <div class="template-grid">
+        <article class="template-card">
+          <a class="preview" href="pdf/cv.pdf" aria-label="预览简历 PDF">
+            <img src="previews/cv.png" alt="简历模板首页预览" width="520" height="640">
+          </a>
+          <div class="card-content">
             <h3>简历</h3>
-            <p><code>templates/cv</code>。XeLaTeX。英文 TeX Gyre Heros，中文 Fandol 黑体，都在 TeX Live 里。基于 myCV。不要加回 Helvetica Neue 或方正兰亭黑。</p>
-            <div class="links">
-              <a class="primary" href="pdf/cv.pdf">下载 PDF</a>
+            <p>XeLaTeX · A4</p>
+            <div class="card-links">
+              <a class="pdf-link" href="pdf/cv.pdf">预览 PDF <span aria-hidden="true">↗</span></a>
               <a href="https://github.com/YZDame/BNU-LaTeX-Templates/tree/main/templates/cv">源文件</a>
             </div>
           </div>
         </article>
-        <article>
-          <img src="previews/slides.png" alt="幻灯片标题页，含中文标题和校徽">
-          <div class="body">
-            <h3>幻灯片</h3>
-            <p><code>templates/slides</code>。文档类 <code>bnuslides</code>。中文按 macOS、Windows、Linux 回退，最后用 Fandol，不依赖微软雅黑。编译：xelatex → bibtex → xelatex 两次。侧栏目录致谢 zbowang。</p>
-            <div class="links">
-              <a class="primary" href="pdf/slides.pdf">下载 PDF</a>
-              <a href="https://github.com/YZDame/BNU-LaTeX-Templates/tree/main/templates/slides">源文件</a>
+
+        <article class="template-card">
+          <a class="preview" href="pdf/paper.pdf" aria-label="预览课程论文 PDF">
+            <img src="previews/paper.png" alt="课程论文模板封面预览" width="520" height="640">
+          </a>
+          <div class="card-content">
+            <h3>课程论文</h3>
+            <p>ctexart · BibTeX</p>
+            <div class="card-links">
+              <a class="pdf-link" href="pdf/paper.pdf">预览 PDF <span aria-hidden="true">↗</span></a>
+              <a href="https://github.com/YZDame/BNU-LaTeX-Templates/tree/main/templates/paper">源文件</a>
             </div>
           </div>
         </article>
-        <article>
-          <img src="previews/thesis.png" alt="学位论文封面，含蓝色校名和作者信息">
-          <div class="body">
-            <h3>研究生学位论文</h3>
-            <p><code>templates/thesis</code> 是 bnuthesis v0.0.5（2026-03-01）的副本，基于 ThuThesis。官方最新版优先：<a href="https://etdlib.bnu.edu.cn/notice/81">图书馆论文系统说明</a>。本仓库与学校无关。<code>figures/</code> 中的校名图按官方包原样保留。编译 <code>bnuthesis-example.tex</code> 和 <code>spine.tex</code>。</p>
-            <div class="links">
-              <a class="primary" href="pdf/thesis.pdf">下载示例 PDF</a>
-              <a href="pdf/thesis-spine.pdf">书脊 PDF</a>
+
+        <article class="template-card">
+          <a class="preview" href="pdf/thesis.pdf" aria-label="预览研究生学位论文 PDF">
+            <img src="previews/thesis.png" alt="研究生学位论文模板封面预览" width="520" height="640">
+          </a>
+          <div class="card-content">
+            <h3>学位论文</h3>
+            <p>bnuthesis · v0.0.5</p>
+            <div class="card-links">
+              <a class="pdf-link" href="pdf/thesis.pdf">预览 PDF <span aria-hidden="true">↗</span></a>
               <a href="https://github.com/YZDame/BNU-LaTeX-Templates/tree/main/templates/thesis">源文件</a>
             </div>
           </div>
         </article>
+
+        <article class="template-card">
+          <a class="preview" href="pdf/slides.pdf" aria-label="预览幻灯片 PDF">
+            <img src="previews/slides.png" alt="16:9 Beamer 幻灯片封面预览" width="520" height="292">
+          </a>
+          <div class="card-content">
+            <h3>幻灯片</h3>
+            <p>Beamer · 16:9</p>
+            <div class="card-links">
+              <a class="pdf-link" href="pdf/slides.pdf">预览 PDF <span aria-hidden="true">↗</span></a>
+              <a href="https://github.com/YZDame/BNU-LaTeX-Templates/tree/main/templates/slides">源文件</a>
+            </div>
+          </div>
+        </article>
       </div>
     </section>
 
-    <section>
-      <h2>怎么用</h2>
-      <div class="note">
-        <p>本地安装 TeX Live 后，在仓库根目录执行 <code>make all</code>。Overleaf 上传单个模板目录，编译器选 XeLaTeX。</p>
-        <p>推送 <code>v*</code> 标签后，Release 里有 <code>bnu-paper.zip</code>、<code>bnu-cv.zip</code>、<code>bnu-slides.zip</code>、<code>bnu-thesis.zip</code> 和全量压缩包。每个压缩包包含该模板需要的图片和编译好的 PDF。</p>
-        <p>许可证：论文、简历、幻灯片模板为 LPPL-1.3c；学位论文目录内另有上游 LPPL-1.3c；<code>assets/bnu-logo</code> 为 GPL-3.0。课程论文样式文件头保留原作者的 CC BY 4.0 声明。简历致谢 myCV，幻灯片致谢 zbowang。</p>
-        <p>模型可读的短索引：<a href="llms.txt">llms.txt</a>。</p>
-      </div>
-    </section>
-
-    <section>
-      <h2>给 AI 助手的提示</h2>
-      <div class="prompt-bar">
-        <h3>中文</h3>
-        <button type="button" class="primary" data-copy="prompt-zh">复制</button>
-      </div>
-      <pre id="prompt-zh">你是熟悉 LaTeX 的写作助手。我在使用非官方仓库 YZDame/BNU-LaTeX-Templates。它与北京师范大学没有隶属关系，也未获学校授权。请只修改我点名的模板。
-
-- templates/paper：ctexart + BNUpapers.sty，参考文献用 BibTeX（reference.bib）。编译为 xelatex → bibtex → xelatex × 2。
-- templates/cv：XeLaTeX。英文 TeX Gyre Heros，中文 FandolHei。不要加回 Helvetica Neue、方正兰亭黑或任何字体文件。保留“基于 myCV”的说明。
-- templates/slides：文档类 bnuslides。中文使用类文件里的平台回退（macOS / Windows / Linux，最后是 TeX Live 的 Fandol），不要改回微软雅黑。参考文献 refs.bib。校徽文件名是 BNU_icon.pdf。保留 zbowang 的侧栏致谢。
-- templates/thesis：bnuthesis v0.0.5（2026-03-01）的副本。官方来源与更新以 https://etdlib.bnu.edu.cn/notice/81 为准。不要改 figures/ 里的校名图。编译 bnuthesis-example.tex 和 spine.tex。类文件已附上；改 dtx 后用 xetex bnuthesis.ins 重新生成。
-- assets/bnu-logo 是 GPL-3.0，不要把它说成 LPPL。
-- 不要引入 myCV、BeamerTheme、LDMCM、清华或 Elegant 的整套代码。
-- 说明这是非官方模板，不要写成学校官方发布。</pre>
-      <div class="prompt-bar">
-        <h3>English</h3>
-        <button type="button" class="primary" data-copy="prompt-en">Copy</button>
-      </div>
-      <pre id="prompt-en">You are a LaTeX assistant. I am using the unofficial repository YZDame/BNU-LaTeX-Templates. It is not affiliated with or endorsed by Beijing Normal University. Edit only the template I name.
-
-- templates/paper: ctexart + BNUpapers.sty, BibTeX file reference.bib. Build xelatex, bibtex, xelatex twice.
-- templates/cv: XeLaTeX. TeX Gyre Heros and FandolHei. Do not restore Helvetica Neue, Founder Lan Ting Hei, or any font files. Keep the myCV credit.
-- templates/slides: class bnuslides. Keep the CJK fallback (macOS, Windows, Linux, then TeX Live Fandol). Do not require Microsoft YaHei. Bibliography is refs.bib. The emblem file is BNU_icon.pdf. Keep the zbowang sidebar credit.
-- templates/thesis: a copy of bnuthesis v0.0.5 dated 2026-03-01. The official latest file at https://etdlib.bnu.edu.cn/notice/81 takes precedence. Do not modify school marks in figures/. Build bnuthesis-example.tex and spine.tex. Regenerate the class with xetex bnuthesis.ins only after editing the dtx.
-- assets/bnu-logo is GPL-3.0. Do not relicense it as LPPL.
-- Do not vendor myCV, BeamerTheme, LDMCM, ThuThesis, or Elegant templates.
-- Say that the collection is unofficial.</pre>
-    </section>
-
-    <section class="english" lang="en">
-      <h2>English</h2>
-      <p>Unofficial XeLaTeX templates: a course paper, a CV, slides, and a convenience copy of the graduate thesis template <strong>bnuthesis v0.0.5 (2026-03-01)</strong>. The official thesis file is published by the BNU Library submission system at <a href="https://etdlib.bnu.edu.cn/notice/81">https://etdlib.bnu.edu.cn/notice/81</a> and takes precedence. This site is not affiliated with, endorsed by, or authorized by Beijing Normal University. The name and emblem are shown only as part of the layout.</p>
-      <p>The CV is based on <a href="https://github.com/Htallone/myCV">myCV</a> and uses TeX Gyre Heros plus Fandol. Slides keep the sidebar credit to <a href="https://github.com/zbowang/BeamerTheme">Zhibo Wang</a> and do not require Microsoft YaHei. The TikZ emblem in <code>assets/bnu-logo</code> is GPL-3.0. The thesis template is LPPL-1.3c and is based on ThuThesis. The rest of this collection is distributed under LPPL-1.3c.</p>
-      <p>School-name images in <code>templates/thesis/figures/</code> are unchanged from the 2026-03-01 official package: <code>BNU_name_blue.png</code> is the graduate cover, <code>BNU_name.eps</code> is the vector wordmark shipped beside it.</p>
-    </section>
+    <div class="help-line">
+      <p>使用 TeX Live 或 Overleaf，选择 XeLaTeX。<a href="https://github.com/YZDame/BNU-LaTeX-Templates#快速开始">使用说明 <span aria-hidden="true">↗</span></a></p>
+      <a href="pdf/thesis-spine.pdf">学位论文书脊 PDF <span aria-hidden="true">↗</span></a>
+    </div>
   </main>
-  <footer class="wrap">
-    <p>源码：<a href="https://github.com/YZDame/BNU-LaTeX-Templates">YZDame/BNU-LaTeX-Templates</a></p>
+
+  <footer class="site-footer">
+    <div class="wrap footer-content">
+      <p>个人整理，非学校官方发布。校名与校徽仅用于版式展示。</p>
+      <p>学位论文请以<a href="https://etdlib.bnu.edu.cn/notice/81">北师大图书馆最新版</a>为准 · <a href="https://github.com/YZDame/BNU-LaTeX-Templates#许可证">许可与致谢</a></p>
+    </div>
   </footer>
-  <script>
-    document.querySelectorAll("[data-copy]").forEach(function (button) {
-      button.addEventListener("click", async function () {
-        var text = document.getElementById(button.getAttribute("data-copy")).innerText;
-        var original = button.textContent;
-        try {
-          await navigator.clipboard.writeText(text);
-          button.textContent = button.getAttribute("data-copy") === "prompt-en" ? "Copied" : "已复制";
-        } catch (error) {
-          button.textContent = "请手动选择";
-        }
-        setTimeout(function () { button.textContent = original; }, 1600);
-      });
-    });
-  </script>
 </body>
 </html>
