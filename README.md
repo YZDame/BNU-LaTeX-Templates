@@ -113,7 +113,7 @@ XeLaTeX。师大蓝配色，首页有校名和照片占位。
 - `bnu-thesis.zip`（源文件、示例 PDF 和书脊 PDF）
 - `bnu-latex-templates.zip`（上述全部，外加说明和 `assets/bnu-logo`）
 
-论文、简历、幻灯片的压缩包带有各自用到的校名或校徽 PDF，并附上 GPL-3.0 许可证文本。
+论文、简历、幻灯片的压缩包带有各自用到的校名或校徽 PDF、模板的 LPPL-1.3c `LICENSE`，以及校徽的 GPL-3.0 文本。
 
 ## 许可证
 
@@ -151,4 +151,4 @@ Build locally with `make all` or with `latexmk` as shown above. On Overleaf, set
 
 **Pages.** The site is deployed on pushes to `main`. `actions/configure-pages` is called with `enablement: true`, but that API call needs a token other than `GITHUB_TOKEN`. A maintainer must once set Settings → Pages → Build and deployment → Source to **GitHub Actions**. The site is then <https://yzdame.github.io/BNU-LaTeX-Templates/>.
 
-**Releases.** A `v*` tag builds `bnu-paper.zip`, `bnu-cv.zip`, `bnu-slides.zip`, `bnu-thesis.zip`, and `bnu-latex-templates.zip`, each of the first three including the logo PDF it needs, and the thesis archive including the compiled example PDF.
+**Releases.** A `v*` tag builds `bnu-paper.zip`, `bnu-cv.zip`, `bnu-slides.zip`, `bnu-thesis.zip`, and `bnu-latex-templates.zip`. Each of the first three includes the logo PDF it needs, the LPPL-1.3c `LICENSE`, and the logo’s GPL-3.0 text. The thesis archive includes its own LPPL license and the compiled example PDF.

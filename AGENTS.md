@@ -51,13 +51,18 @@ cd templates/thesis && latexmk bnuthesis-example.tex && latexmk spine.tex
 
 `Makefile` 的包名是 `bnuthesis`。`make thesis` 与 `make spine` 对应用户手册里的两个目标。
 
-## 许可证与声明
+## 声明
 
-- 根目录 `LICENSE` 是 LPPL-1.3c 全文，覆盖本合集对论文、简历、幻灯片模板的分发。
+本仓库是非官方合集，与北京师范大学没有隶属关系，亦未获得北京师范大学的认可或授权。校名和校徽只用于版式演示。使用标识前请自行核对学校的规范。
+
+This collection is unofficial. It is not affiliated with, endorsed by, or authorized by Beijing Normal University. The university name and emblem appear only for layout demonstration. Check the university’s identity rules before reuse.
+
+## 许可证
+
+- 根目录 `LICENSE` 是 LPPL-1.3c 全文，覆盖本合集对论文、简历、幻灯片模板的分发。单独的 `bnu-paper.zip`、`bnu-cv.zip`、`bnu-slides.zip` 必须带上这份 `LICENSE`，并另附校徽的 `LOGO-GPL-3.0.txt`。
 - `templates/thesis/LICENSE` 是上游模板自带的 LPPL-1.3c，保持原文件。
 - `templates/paper/BNUpapers.sty` 文件头保留 LeyuDame 原来的 CC BY 4.0 声明。
 - `assets/bnu-logo/LICENSE` 是 GPL-3.0，不要并进 LPPL。
-- README、本文件和 Pages 站点都要保留中英双语声明：非官方，与北京师范大学没有隶属关系，未获认可或授权；校名和校徽只作版式演示。
 
 ## 站点与发布
 
@@ -67,7 +72,7 @@ cd templates/thesis && latexmk bnuthesis-example.tex && latexmk spine.tex
 
 ## Hard rules
 
-- Unofficial. Do not describe the collection as issued or endorsed by Beijing Normal University.
+- Unofficial. This collection is not affiliated with, endorsed by, or authorized by Beijing Normal University. The university name and emblem appear only for layout demonstration.
 - Thesis copy is bnuthesis v0.0.5 dated 2026-03-01 only. The library page https://etdlib.bnu.edu.cn/notice/81 wins when versions differ. Leave `figures/` school marks byte-for-byte unchanged.
 - No commercial or non-redistributable fonts. CV: TeX Gyre Heros + Fandol. Slides: platform fallback ending in Fandol, never Microsoft YaHei.
 - `assets/bnu-logo` stays GPL-3.0. Root license stays LPPL-1.3c.

@@ -87,9 +87,11 @@ def main() -> None:
     copy_tree(ROOT / "templates/slides", STAGE / "bnu-slides")
     copy_tree(ROOT / "templates/thesis", STAGE / "bnu-thesis")
 
-    license_src = ROOT / "assets/bnu-logo/LICENSE"
+    lppl = ROOT / "LICENSE"
+    logo_license = ROOT / "assets/bnu-logo/LICENSE"
     for name in ("bnu-paper", "bnu-cv", "bnu-slides"):
-        shutil.copy2(license_src, STAGE / name / "LOGO-GPL-3.0.txt")
+        shutil.copy2(lppl, STAGE / name / "LICENSE")
+        shutil.copy2(logo_license, STAGE / name / "LOGO-GPL-3.0.txt")
 
     bundle = STAGE / "bnu-latex-templates"
     bundle.mkdir(parents=True)
