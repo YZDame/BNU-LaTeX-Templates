@@ -1,14 +1,14 @@
-# 课程论文模板
+# 课程论文
 
-适用于课程平时论文和期末论文。正文为 `ctexart`，版式在 `BNUpapers.sty`（页边距 2.5 cm，小四）。封面校名图是 `figures/BNU_name.pdf`，与 `assets/bnu-logo/BNU_name.pdf` 相同，该图以 GPL-3.0 授权，见仓库 `assets/bnu-logo/LICENSE`。
+`ctexart` 课程论文。作者 LeyuDame，基于 Shawn Wang 的北京大学课程论文模板。样式文件头保留 CC BY 4.0 声明；本合集以 LPPL-1.3c 分发。
 
-作者 LeyuDame。样式文件在北京大学课程论文模板（Shawn Wang）基础上修改。文件头保留原作者的 CC BY 4.0 声明；本合集的维护副本同时置于根目录 LPPL-1.3c 之下，说明见仓库 README。
+<img src="../../assets/previews/paper-cover.png" alt="封面" width="480">
+<img src="../../assets/previews/paper-body.png" alt="正文" width="480">
 
-第一次使用时，在 `BNUpapers.sty` 里改标题、姓名、学号、院系和页眉。
+在 `BNUpapers.sty` 中修改标题、姓名、学号、院系和页眉。参考文献写在 `reference.bib`。封面校名图 `figures/BNU_name.pdf` 与 `assets/bnu-logo` 相同（GPL-3.0）。
 
 ```bash
-cd templates/paper
 latexmk -xelatex main.tex
 ```
 
-等价编译顺序：`xelatex → bibtex → xelatex → xelatex`。参考文献写在 `reference.bib`。
+Overleaf：上传本目录，编译器选 XeLaTeX。
