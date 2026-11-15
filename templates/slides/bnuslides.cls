@@ -144,8 +144,11 @@
 \pretocmd{\beamer@doseveralframes}{%
   \bnuslides@titleframe@begin{#1}%
 }{}{\ClassError{bnuslides}{Failed to patch the title-page frame}{}}
-\apptocmd{\beamer@doseveralframes}{%
+% 恢复必须写在 \beamer@reseteecodes 之前。\mode* 会在那里重新开始
+% 帧外扫描，补在宏末尾的代码会被直接丢掉，后面的页面就留在加宽状态。
+\patchcmd{\beamer@doseveralframes}{\beamer@reseteecodes}{%
   \bnuslides@titleframe@end
+  \beamer@reseteecodes
 }{}{\ClassError{bnuslides}{Failed to restore the sidebar after the title page}{}}
 
 
